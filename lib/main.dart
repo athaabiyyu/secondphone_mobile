@@ -1,6 +1,9 @@
 import 'package:secondphone_mobile/app/app.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
-  runApp(const SecondPhoneApp());
+  runApp(const ProviderScope(
+    child: SecondPhoneApp(),
+  ));
 }
