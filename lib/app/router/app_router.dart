@@ -1,14 +1,19 @@
 import 'package:go_router/go_router.dart';
-import 'package:secondphone_mobile/features/splash/presentation/page/splash_page.dart';
-import 'package:secondphone_mobile/app/config/app_config.dart';
+import '../../features/splash/presentation/splash_page.dart';
+import '../../features/home/presentation/home_page.dart';
 
-class AppRouter {
-  static final GoRouter router = GoRouter(
-    routes: [
-      GoRoute(
-        path: '/',
-        builder: (context, state) => const SplashPage(title: AppConfig.appName),
-        ),
-    ]
-  );
-}
+final GoRouter appRouter = GoRouter(
+  initialLocation: '/',
+  routes: [
+    GoRoute(
+      path: '/',
+      name: 'splash',
+      builder: (context, state) => const SplashPage(),
+    ),
+    GoRoute(
+      path: '/home',
+      name: 'home',
+      builder: (context, state) => const HomePage()
+    )
+  ]
+);
